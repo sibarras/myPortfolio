@@ -1,0 +1,12 @@
+{% extends "projects/layout.html" %}
+{% block body %}
+<h1>Projects</h1>
+    <ul>
+        {% for project_name in projects %}
+            <li><a href="{% url 'projects:project' project_name %}">{{ project_name }}</a></li>
+        {% empty %}
+            <li>No Projects.</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
